@@ -4,3 +4,6 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+let sum = 8 + 9;
+console.log(sum);
