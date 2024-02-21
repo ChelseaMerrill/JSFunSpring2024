@@ -3,3 +3,5 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+let myName = "Chelsea";
+console.log(myName);
