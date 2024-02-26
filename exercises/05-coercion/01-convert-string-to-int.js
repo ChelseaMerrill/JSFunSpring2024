@@ -6,3 +6,5 @@ let answer = "55"; // e.g.
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+let num =+answer;
+console.log(num);
