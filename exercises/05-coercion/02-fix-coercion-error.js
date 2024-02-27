@@ -9,5 +9,5 @@ let num2 = "7"; // e.g.
 
 // WRITE YOUR ANSWER BELOW THIS LINE
 
-let sum = + num2;
+let sum = +num1 + +num2;
 console.log(sum);

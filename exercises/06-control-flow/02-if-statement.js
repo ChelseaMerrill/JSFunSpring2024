@@ -1,5 +1,5 @@
 let subtotal = 50.0; // e.g.
-let tip = 0.2; // e.g.
+let tip = 0.5; // e.g.
 
 let total;
 
@@ -13,3 +13,9 @@ let total;
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+if(tip){
+  total = subtotal+tip;
+} else{
+  total = subtotal;
+}
+console.log(total);
