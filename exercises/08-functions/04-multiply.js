@@ -16,3 +16,7 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+const multiple = (num1, num2) => {
+  return (num1*num2);
+};
+multiple(5,4);
