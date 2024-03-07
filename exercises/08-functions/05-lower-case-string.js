@@ -26,3 +26,4 @@ const lowerCaseString = (str) => {
   
 };
 console.log(lowerCaseString("HELLO, MY NAME IS CHELSEA"));
+
