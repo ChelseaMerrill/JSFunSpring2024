@@ -12,4 +12,18 @@ let string = "racecar";
 
 // WRITE YOUR ANSWER BELOW THIS LINE
 
-let isPalindrome = string === string.split('').reverse().join('');
+// Solution 1: for ... of loop
+let isPalindrome;
+let letters = string.split("");
+let reverse = "";
+for (let letter of letters) {
+  reverse = letter + reverse;
+}
+if (reverse === string) {
+  isPalindrome = true;
+}
+isPalindrome = false;
+
+// Solution 2: reverse
+const reverse = string.split("").reverse().join("");
+let isPalindrome = reverse === string;
