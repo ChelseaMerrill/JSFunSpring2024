@@ -24,18 +24,19 @@ let linkedInLink = "https://linkedin.com/profile"; // e.g.
  *     linkedIn: "https://linkedin.com/profile"
  *   }
  * }
- 
+ *
+ * Your answer should work with "name", "graduation", and the other variables above
  * are different values.
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
 
-let graduate = {
+const graduate = {
   name,
   graduationYear,
   skills,
-  links:{
+  links: {
     github: githubLink,
-    linkedIn: linkedInLink
-  }
+    linkedIn: linkedInLink,
+  },
 };
