@@ -18,3 +18,6 @@ const blogPost = {
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+let values = Object.keys(blogPost).map((key) => [key, blogPost[key]]);
+console.log(values);
+

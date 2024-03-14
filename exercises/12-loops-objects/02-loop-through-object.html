@@ -41,7 +41,7 @@
             description:
               "The saga of Michael Myers and Laurie Strode comes to a spine-chilling climax in the final installment of this trilogy.",
           },
-          till: {
+          "till": {
             title: "Till",
             description:
               "In 1955, after Emmett Till is murdered in a brutal lynching, his mother vows to expose the racism behind the attack while working to have those involved brought to justice.",
@@ -60,15 +60,22 @@
          * The code below should go inside the loop.
          * Change the code below so that it will work for the other movies too.
          */
-        let movie = movies["halloween-ends"];
-        const htmlString = `<li class="list-group-item d-flex justify-content-between align-items-start">
+        // let movie = [];
+        // for (let movieTitle in movies){
+        //   if (movies.hasOwnProperty(movieTitle)){
+        //     movie = movies[movieTitle];
+        //   }
+        // }
+        let mappedMovie = Object.keys(movies).map(title => {
+          let movie = movies[title]
+          const htmlString = `<li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
             <div class="fw-bold">${movie.title}</div>
             ${movie.description}
           </div>
         </li>`;
         list.insertAdjacentHTML("beforeend", htmlString);
-
+        })
         // Do not change anything below this line.
       })();
     </script>

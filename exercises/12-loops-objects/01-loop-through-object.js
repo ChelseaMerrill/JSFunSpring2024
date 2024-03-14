@@ -17,3 +17,10 @@ const links = {
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+let html =[];
+for (const link in links){
+  console.log(`${link}: ${links[link]}`);
+  html.push(links[link]);
+}
+console.log(html);
+
