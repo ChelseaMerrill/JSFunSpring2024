@@ -17,16 +17,16 @@ const links = {
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
-// let html =[];
-// for (const link in links){
-//   console.log(`${link}: ${links[link]}`);
-//   html.push(links[link]);
-// }
-// console.log(html);
 
-///
-let html= "";
-for (let link in links){
-  html += `<a href="${links[link]}">${link}</a>`;
+// Solution 1
+let html = "";
+for (let text in links) {
+  const href = links[text];
+  html = html + '<a href="' + href + '">' + text + "</a>";
 }
-console.log(html)
+
+// Solution 2
+let html = "";
+for (let [text, href] of Object.entries(links)) {
+  html += `<a href="${href}">${text}</a>`;
+}

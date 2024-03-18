@@ -19,7 +19,4 @@ const blogPost = {
 
 // WRITE YOUR ANSWER BELOW THIS LINE
 
-let values = Object.values(blogPost);
-console.log(values);
-
-
+const values = Object.values(blogPost);
