@@ -15,9 +15,3 @@ if (num < 1 || num > 10){
 } else{
   console.log("please enter a valid number"); //error handling
 }
-
-// let counter = 1;
-// while(counter <= 10){
-//   console.log(counter*10);
-//   counter ++;
-// }
