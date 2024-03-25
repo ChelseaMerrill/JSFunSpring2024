@@ -13,5 +13,3 @@ let num = 9; // e.g.
 // WRITE YOUR ANSWER BELOW THIS LINE
 let isEvenOrOdd = num % 2 === 0 ?  'even' : 'odd';
 console.log(isEvenOrOdd);
-
-
