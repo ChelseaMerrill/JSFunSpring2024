@@ -15,7 +15,7 @@ const links = [
  *
  * @example
  * // After you solve this problem, "htmlStr" should equal:
- * <a href="http://speakingjs.com/es5/ch04.html">1. http://speakingjs.com/es5/ch04.html</a><a href="https://www.ecma-international.org/">2. https://www.ecma-international.org/</a><a href="https://books.google.com/books?id=2weL0iAfrEMC">3. https://books.google.com/books?id=2weL0iAfrEMC</a>
+ * <a href="http://speakingjs.com/es5/ch04.html"> 1. http://speakingjs.com/es5/ch04.html</a><a href="https://www.ecma-international.org/">2. https://www.ecma-international.org/</a><a href="https://books.google.com/books?id=2weL0iAfrEMC">3. https://books.google.com/books?id=2weL0iAfrEMC</a>
  *
  * HINT: You will need to use the index in the array to solve this problem.
  *
@@ -25,10 +25,13 @@ const links = [
 
 // WRITE YOUR ANSWER BELOW THIS LINE
 
-links.forEach(function(link, index){
-  htmlStr += `<a href='${link}'>${++index}. ${link}</a>`;
+// Solution 1
+links.forEach((href, idx) => {
+  const num = idx + 1;
+  htmlStr = htmlStr + '<a href="' + href + '">' + num + ". " + href + "</a>";
 });
 
-// links.forEach((link, i) => htmlStr += `<a href="${link}">${++i}. ${link}</a>`);
-console.log(htmlStr);
-
+// Solution 2
+links.forEach((href, idx) => {
+  htmlStr += `<a href="${href}">${idx + 1}. ${href}</a>`;
+});
