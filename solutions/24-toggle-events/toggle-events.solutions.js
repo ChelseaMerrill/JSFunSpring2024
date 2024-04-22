@@ -4,14 +4,18 @@
    *
    * When the user clicks on the "Accept Cookies" button, the "Accept Cookies" popup should disappear.
    */
-  // Write your answer here
-  const acceptCookies = document.querySelector("#acceptCookiesButton");
 
-acceptCookies.addEventListener("click", () => {
-  acceptCookies.disabled = "disabled";
-  document.querySelector("#acceptCookiesPopup").style.display = "none";
-});
+  // Step 1 Target
+  const acceptCookiesPopup = document.querySelector("#acceptCookiesPopup");
+  const acceptCookiesButton = document.querySelector("#acceptCookiesButton");
 
+  // Step 3 Do something
+  const dismissPopup = () => {
+    acceptCookiesPopup.style.display = "none";
+  };
+
+  // Step 2 React to an event
+  acceptCookiesButton.addEventListener("click", dismissPopup);
 
   /**
    * Problem 2: Show comments for the news story.
@@ -30,17 +34,22 @@ acceptCookies.addEventListener("click", () => {
    * HINT: Right now, the comments are hidden because they have the class ".hidden",
    * but you can switch up the HTML so that it uses inline styles if you like.
    */
-  // Write your answer here
-    const commentsButton = document.querySelector("#toggleComments");
-    commentsButton.addEventListener("click", () => {
-      const commentView = document.querySelector("#comments");
-    
-      if (commentView.classList.contains("hidden")) {
-        commentView.classList.remove("hidden");
-        commentsButton.textContent = "Hide Comments";
-      } else {
-        commentView.classList.add("hidden");
-        commentsButton.textContent = "View Comments";
-      }});
 
+  // Step 1 Target
+  const toggleComments = document.querySelector("#toggleComments");
+  const comments = document.querySelector("#comments");
+
+  // Step 2 React to an event
+  toggleComments.addEventListener("click", () => {
+    // Step 3 Do something
+    // Show comments if they are hidden
+    if (comments.classList.contains("hidden")) {
+      comments.classList.remove("hidden");
+      toggleComments.textContent = "Hide Comments";
+    } else {
+      // Hide comments if they are not hidden
+      comments.classList.add("hidden");
+      toggleComments.textContent = "Show Comments";
+    }
+  });
 })();
