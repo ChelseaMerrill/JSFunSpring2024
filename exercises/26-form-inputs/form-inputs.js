@@ -13,6 +13,15 @@
    * (See the comments in the HTML for what <span> tags to sue.)
    */
   // Write your answer here
+  const email = document.querySelector(["#email"]);
+	email.addEventListener("input", (event) => {
+		document.querySelector("#displayEmail").textContent = event.target.value;
+	});
+
+	const title = document.querySelector("#title");
+	title.addEventListener("input", () => {
+		document.querySelector("#titleSpan").textContent = title.options[title.selectedIndex].text;
+	});
   /**
    * Problem 2: Handle a checkbox
    *
@@ -23,6 +32,16 @@
    * As a bonus, see if you can hide the <div> tag if they uncheck the checkbox.
    */
   // Write your answer here.
+
+const sendOffers = document.querySelector("#sendOffers");
+  const showHidden = document.querySelector("#hidden");
+  sendOffers.addEventListener("click", (event) => {
+    if (sendOffers.checked) {
+      showHidden.style.display = "block";
+    } else {
+      showHidden.style.display = "none";
+    }
+  });
   /**
    * Problem 3: Input validation
    *
@@ -35,4 +54,13 @@
    * is to use "blur" events for these types of error messages (form validation errors).
    */
   // Write your answer here
+  const errorMessage = document.querySelector('.invalid-ffedback');
+  email.addEventListener("blur", ()=>{
+    if(email.value){
+      errorMessage.style.display = "hidden";
+    } else{
+      errorMessage.style.display = "block";
+    }
+
+  });
 })();

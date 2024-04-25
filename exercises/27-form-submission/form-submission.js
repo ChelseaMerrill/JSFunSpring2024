@@ -17,6 +17,13 @@
    * and you must prevent the page from refreshing when the form is submitted.
    */
   // Write your answer here
+  const form =document.querySelector('#my-form');
+  const search = document.querySelector.apply('#search');
+  form.addEventListener("submit", (e) =>{
+    e.preventDefault();
+    const displayResults = search.value;
+    displayResults.textContent = `No results for ${displayResults} found`;
+  });
   /**
    * Problem 2: Agree to the terms and conditions
    *
@@ -35,4 +42,5 @@
    * To start, you will need to hide some element on the page and change the input's classes.
    */
   // Write your answer here
+
 })();
