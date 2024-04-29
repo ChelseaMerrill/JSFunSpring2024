@@ -28,11 +28,13 @@
      *
      * Note that this won't display until you click on the "Search" button.
      */
-
-    // Write you JavaScript here
     const results = document.createElement("div");
+    // Add text
     results.textContent = `No results for ${ocean} found.`;
+    // Add classes
     results.classList.add("italic");
+
+    // Add to page
     const parent = document.querySelector("#searchEngine");
     parent.appendChild(results);
   };
@@ -57,12 +59,10 @@
 
   /*
    * STEP 1
-   * Replace img src, movie title in the <h1> tag, and date inside of the <small> tag
+   * Replace img src, movie title (Luca), and date (2001)
    * with values from the movie object.
-   * See what I am doing with "movie.description" as an example below.
+   * See what I am doing with "movie.description" below as an example.
    */
-
-  // Update me
   let movieHtml = `<img src="${movie.imgSrc}" />
   <div class="flex-auto my-4">
     <h1 class="text-2xl mb-4">${movie.title} <small>(${movie.year})</small></h1>
@@ -76,9 +76,7 @@
    * Use insertAdjacentHTML or innerHTML to add movieHTML to the page.
    * See the comments in the HTML for where to add it.
    */
-
-  // Write you JavaScript here
-  document.querySelector("#movie").innerHTML = movieHtml
+  document.querySelector("#movie").innerHTML = movieHtml;
 
   /**
    * Problem 3: Create a ChatGPT conversation from an array of objects
@@ -124,7 +122,19 @@
       </p>
     </div>
    */
-
-  // Write you JavaScript here
   const conversation = document.querySelector("#conversation");
+
+  /**
+   * Alternatively, I can use a for or a for ... of loop here
+   * @example for (let dialogue of conversationDialogues) {
+   */
+  conversationDialogues.forEach((dialogue) => {
+    let conversationHtml = `<div class="border-solid border-2 border-slate-200 rounded p-2 mb-4">
+      <div class="font-bold">${dialogue.author}</div>
+      <p>
+        ${dialogue.message}
+      </p>
+    </div>`;
+    conversation.insertAdjacentHTML("beforeEnd", conversationHtml);
+  });
 })();

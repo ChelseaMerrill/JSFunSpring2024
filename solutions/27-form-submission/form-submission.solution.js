@@ -1,10 +1,5 @@
 (function () {
   /**
-   * You have a few problems to solve below with Vanilla JavaScript.
-   * You are allowed to make changes to the HTML and CSS.
-   */
-  // Write your answer here
-  /**
    * Problem 1: Display the results of the world's most pointless search engine.
    *
    * When the user types in the textbook and either clicks "Search" button or hits the enter key,
@@ -16,14 +11,19 @@
    * The exercise must be completed with a form handler
    * and you must prevent the page from refreshing when the form is submitted.
    */
-  // Write your answer here
-  const form =document.querySelector('#my-form');
-  const search = document.querySelector.apply('#search');
-  form.addEventListener("submit", (e) =>{
-    e.preventDefault();
-    const displayResults = search.value;
-    displayResults.textContent = `No results for ${displayResults} found`;
+
+  // Step 1: Target
+  const oceanForm = document.querySelector("#handleThisForm");
+  const oceanInput = document.querySelector("#oceanInput");
+  const oceanDisplay = document.querySelector("#oceanOutput");
+
+  // Step 2: React to event
+  oceanForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    // Step 3: Do something - stop the form from refreshing and display "No results for ____ found".
+    oceanDisplay.textContent = `No results for ${oceanInput.value} found`;
   });
+
   /**
    * Problem 2: Agree to the terms and conditions
    *
@@ -32,45 +32,52 @@
    * and the label "I Agree to the Terms and Conditions" should turn red.
    * If she has, then display "Thank you for signing up".
    *
-   * To see an example of what this looks like:
-   * When the page loads, @see terms-on-load.png
-   * When the user clicks on the "Continue" button without checking the "I Agree ..." checkbox,
-   * @see terms-on-error.png
-   * When the user checks the "I Agree ..." checkbox and click "Continue",
-   * @see terms-on-success.png
-   *
    * To start, you will need to hide some element on the page and change the input's classes.
    */
-  // Write your answer here
+
+  // Step 1: Target
   const terms = document.querySelector("#terms");
   const termsError = document.querySelector("#termsError");
   const termsSuccess = document.querySelector("#termsSuccess");
   const checkbox = document.querySelector("#terms");
 
+  // Step 3: Do something
+
   const showTermsError = () => {
+    // Makes "I Agree to the Terms and Conditions" red
     if (!terms.classList.contains("is-invalid")) {
       terms.classList.add("is-invalid");
     }
+
+    // Hides success message
     if (!termsSuccess.classList.contains("hidden")) {
       termsSuccess.classList.add("hidden");
     }
+
+    // Shows error message
     if (termsError.classList.contains("hidden")) {
       termsError.classList.remove("hidden");
     }
   };
 
   const showTermsSuccess = () => {
+    // Reverts "I Agree to the Terms and Conditions" back to original color
     if (terms.classList.contains("is-invalid")) {
       terms.classList.remove("is-invalid");
     }
-   if (termsSuccess.classList.contains("hidden")) {
+
+    // Hides success message
+    if (termsSuccess.classList.contains("hidden")) {
       termsSuccess.classList.remove("hidden");
     }
+
+    // Shows error message
     if (!termsError.classList.contains("hidden")) {
       termsError.classList.add("hidden");
     }
   };
 
+  // Step 2: React to an event
   document.querySelector("#termsForm").addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -80,5 +87,4 @@
       showTermsError();
     }
   });
-
 })();
